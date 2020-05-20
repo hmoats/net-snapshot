@@ -1,0 +1,40 @@
+VLAN Name                             Status    Ports
+---- -------------------------------- --------- -------------------------------
+1    default                          active    Gi1/1, Gi1/2
+10   outside1                         active    
+11   outside2                         active    Gi0/1
+20   service1                         active    
+21   voice1                           active    
+22   iot1                             active    
+23   secure1                          active    
+24   user1                            active    
+25   wlan-user1                       active    
+26   wlan-guest1                      active    
+1002 fddi-default                     act/unsup 
+1003 token-ring-default               act/unsup 
+1004 fddinet-default                  act/unsup 
+1005 trnet-default                    act/unsup 
+
+VLAN Type  SAID       MTU   Parent RingNo BridgeNo Stp  BrdgMode Trans1 Trans2
+---- ----- ---------- ----- ------ ------ -------- ---- -------- ------ ------
+1    enet  100001     1500  -      -      -        -    -        0      0   
+10   enet  100010     1500  -      -      -        -    -        0      0   
+11   enet  100011     1500  -      -      -        -    -        0      0   
+20   enet  100020     1500  -      -      -        -    -        0      0   
+21   enet  100021     1500  -      -      -        -    -        0      0   
+22   enet  100022     1500  -      -      -        -    -        0      0   
+23   enet  100023     1500  -      -      -        -    -        0      0   
+24   enet  100024     1500  -      -      -        -    -        0      0   
+25   enet  100025     1500  -      -      -        -    -        0      0   
+26   enet  100026     1500  -      -      -        -    -        0      0   
+1002 fddi  101002     1500  -      -      -        -    -        0      0   
+1003 tr    101003     1500  -      -      -        -    -        0      0   
+1004 fdnet 101004     1500  -      -      -        ieee -        0      0   
+1005 trnet 101005     1500  -      -      -        ibm  -        0      0   
+
+Remote SPAN VLANs
+------------------------------------------------------------------------------
+
+
+Primary Secondary Type              Ports
+------- --------- ----------------- ------------------------------------------

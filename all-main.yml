@@ -1,0 +1,39 @@
+---
+#######################################################################
+# Main all loop
+#######################################################################
+- name: Main ios loop
+  hosts: ios
+  gather_facts: no
+  tasks:
+    - name: Running "{{ run_commands }}"
+      include_tasks: ios-plays.yml
+      loop: "{{ run_commands }}"
+      loop_control:
+        loop_var: main_item
+    
+    - name: Running diff for "{{ inventory_hostname }}"
+      command: "{{ snapshot_home }}/runDiff.sh {{ snapshot_data }}/{{ inventory_hostname }}_{{ backup_ios }} {{ snapshot_var }}/{{ inventory_hostname}}_{{ backup_ios }}"
+      register: diffresult
+
+    - debug: 
+        msg: "{{ diffresult.stdout.split('\n') }}"
+
+- name: Main asa loop
+  hosts: asa 
+  gather_facts: no
+  tasks:
+    - name: Running "{{ run_commands }}"
+      include_tasks: asa-plays.yml
+      loop: "{{ run_commands }}"
+      loop_control:
+        loop_var: main_item
+
+- name: Execute final tasks 
+  hosts: localhost
+  gather_facts: no
+  tasks:
+    - name: "Copy {{ snapshot_var }} to {{ snapshot_data }}"
+      copy:
+        src: "{{ snapshot_var }}/"
+        dest: "{{ snapshot_data }}/"

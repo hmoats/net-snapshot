@@ -1,0 +1,14 @@
+---
+#######################################################################
+# Main ios loop
+#######################################################################
+- name: Main ios loop
+  hosts: ios
+  gather_facts: no
+
+  tasks:
+    - name: Running {{ run_commands }}
+      include_tasks: ios-plays.yml
+      loop: "{{ run_commands }}"
+      loop_control:
+        loop_var: main_item

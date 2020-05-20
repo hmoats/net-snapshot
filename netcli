@@ -1,0 +1,34 @@
+#!/bin/bash
+###################################################################
+#
+# netcli a simple bash completion script to view snapshot files
+#
+###################################################################
+HOME=/opt/net-snapshot
+DATA=${HOME}/data
+USAGE="$0: [TAB|list inventory] [more|less|view]"
+
+if [ -z "$1" ]; then
+  echo "$USAGE"
+  exit 2
+fi
+
+if [ "$1" == "list" ];
+then
+  cat $HOME/inventory/hosts
+  exit 1
+fi
+
+if [ "$2" == "more" ];
+then
+  more $DATA/$1
+elif [ "$2" == "less" ];
+then
+  less $DATA/$1
+elif [ "$2" == "view" ];
+then
+  view $DATA/$1
+else
+  cat $DATA/$1
+fi
+

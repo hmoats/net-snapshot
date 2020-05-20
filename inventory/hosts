@@ -1,0 +1,86 @@
+all:
+  vars:
+    ansible_python_interpreter: python3
+    ansible_connection: network_cli
+    ansible_user: !vault |
+          $ANSIBLE_VAULT;1.1;AES256
+          37396135393433323065633634353233336332393363383830313133613030396266666565336436
+          6639343136323930346434313965623566383233303264650a616366653138363839313762643736
+          30393833656335316166666137333131633937346161363732373336303362383262373863663665
+          3862303964646539330a366133303963313032353437343534633836393461383365366263363836
+          6538
+    ansible_password: !vault |
+          $ANSIBLE_VAULT;1.1;AES256
+          37396135393433323065633634353233336332393363383830313133613030396266666565336436
+          6639343136323930346434313965623566383233303264650a616366653138363839313762643736
+          30393833656335316166666137333131633937346161363732373336303362383262373863663665
+          3862303964646539330a366133303963313032353437343534633836393461383365366263363836
+          6538
+    ansible_become: yes
+    ansible_become_method: enable
+    ansible_become_password: !vault |
+          $ANSIBLE_VAULT;1.1;AES256
+          37396135393433323065633634353233336332393363383830313133613030396266666565336436
+          6639343136323930346434313965623566383233303264650a616366653138363839313762643736
+          30393833656335316166666137333131633937346161363732373336303362383262373863663665
+          3862303964646539330a366133303963313032353437343534633836393461383365366263363836
+          6538
+    snapshot_home: /home/hmoats/net-snapshot2
+    snapshot_data: "{{ snapshot_home }}/data"
+    snapshot_var: "{{ snapshot_home }}/var"
+  children:
+    asa:
+      vars:
+        ansible_network_os: asa
+        backup_ios: 'show-running-config'
+      children:
+        firewalls:
+          vars:
+            run_commands:
+              - 'show running-config'
+              - 'show version'
+              - 'show ip'
+              - 'show arp'
+          hosts:
+            asav-1:
+              ansible_host: 172.16.1.101
+    ios:
+      vars:
+        ansible_network_os: ios
+        backup_ios: 'show-running-config'
+      children:
+        switches:
+          vars:
+            run_commands:
+              - 'show running-config'
+              - 'show version'
+              - 'show ip interface brief'
+              - 'show vlan'
+              - 'show arp'
+              - 'show ntp status'
+              - 'show ip route'
+              - 'show users'
+              - 'show access-list'
+              - 'show mac address-table'
+              - 'show spanning-tree summary'
+          hosts:
+            iosvl2-1:
+              ansible_host: 172.16.1.103
+            iosvl2-2:
+              ansible_host: 172.16.1.104
+        routers:
+          vars:
+            run_commands:
+              - 'show running-config'
+              - 'show version'
+              - 'show ip interface brief'
+              - 'show arp'
+          hosts:
+            isp-1:
+              ansible_host: 172.16.1.105
+            isp-2:
+              ansible_host: 172.16.1.106
+            test-1:
+              ansible_host: 172.16.1.107
+            test-2:
+              ansible_host: 172.16.1.108

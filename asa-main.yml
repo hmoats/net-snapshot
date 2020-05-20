@@ -1,0 +1,14 @@
+---
+#######################################################################
+# Main asa loop
+#######################################################################
+- name: Main asa loop
+  hosts: asa
+  gather_facts: no
+
+  tasks:
+    - name: Running {{ run_commands }}
+      include_tasks: asa-plays.yml
+      loop: "{{ run_commands }}"
+      loop_control:
+        loop_var: main_item

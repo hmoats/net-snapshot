@@ -1,0 +1,26 @@
+System IP Addresses:
+Interface                Name                   IP address      Subnet mask     Method 
+GigabitEthernet0/0.10    outside1               192.168.10.1    255.255.255.0   CONFIG
+GigabitEthernet0/0.11    outside2               192.168.11.1    255.255.255.0   CONFIG
+GigabitEthernet0/1.20    service1               10.0.20.1       255.255.255.0   CONFIG
+GigabitEthernet0/1.21    voice1                 10.0.21.1       255.255.255.0   CONFIG
+GigabitEthernet0/1.22    iot1                   10.0.22.1       255.255.255.0   CONFIG
+GigabitEthernet0/1.23    secure1                10.0.23.1       255.255.255.0   CONFIG
+GigabitEthernet0/1.24    user1                  10.0.24.1       255.255.255.0   CONFIG
+GigabitEthernet0/1.25    wlan-user1             10.0.25.1       255.255.255.0   CONFIG
+GigabitEthernet0/1.26    wlan-guest1            10.0.26.1       255.255.255.0   CONFIG
+GigabitEthernet0/2       folink                 192.168.1.1     255.255.255.252 unset 
+Management0/0            mgmt                   172.16.1.101    255.255.255.0   manual
+Current IP Addresses:
+Interface                Name                   IP address      Subnet mask     Method 
+GigabitEthernet0/0.10    outside1               192.168.10.1    255.255.255.0   CONFIG
+GigabitEthernet0/0.11    outside2               192.168.11.1    255.255.255.0   CONFIG
+GigabitEthernet0/1.20    service1               10.0.20.1       255.255.255.0   CONFIG
+GigabitEthernet0/1.21    voice1                 10.0.21.1       255.255.255.0   CONFIG
+GigabitEthernet0/1.22    iot1                   10.0.22.1       255.255.255.0   CONFIG
+GigabitEthernet0/1.23    secure1                10.0.23.1       255.255.255.0   CONFIG
+GigabitEthernet0/1.24    user1                  10.0.24.1       255.255.255.0   CONFIG
+GigabitEthernet0/1.25    wlan-user1             10.0.25.1       255.255.255.0   CONFIG
+GigabitEthernet0/1.26    wlan-guest1            10.0.26.1       255.255.255.0   CONFIG
+GigabitEthernet0/2       folink                 192.168.1.1     255.255.255.252 unset 
+Management0/0            mgmt                   172.16.1.101    255.255.255.0   manual

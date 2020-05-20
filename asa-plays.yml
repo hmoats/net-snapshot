@@ -1,0 +1,16 @@
+---
+#######################################################################
+# Run main_item (command) and register output
+#######################################################################
+- name: Running command {{ main_item }}
+  asa_command:
+    commands: "{{ main_item }}"
+  register: command
+
+#######################################################################
+# Save main_item (command) to snapshot_var directory
+#######################################################################
+- name: Saving command {{ main_item }}
+  copy:
+    content: "{{ command.stdout[0] }}\n"
+    dest: "{{ snapshot_var }}/{{ inventory_hostname }}_{{ main_item | replace(' ', '-') }}"

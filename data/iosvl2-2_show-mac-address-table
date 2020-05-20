@@ -1,0 +1,31 @@
+Mac Address Table
+-------------------------------------------
+
+Vlan    Mac Address       Type        Ports
+----    -----------       --------    -----
+   1    fa16.3e78.2991    DYNAMIC     Gi1/2
+   1    fa16.3e9e.0d6e    DYNAMIC     Gi0/3
+  11    fa16.3e13.8246    DYNAMIC     Gi0/3
+  11    fa16.3e80.922c    DYNAMIC     Gi0/2
+  11    fa16.3e9e.0d6e    DYNAMIC     Gi0/3
+  11    fa16.3ee2.b512    DYNAMIC     Gi0/1
+  10    fa16.3e13.8246    DYNAMIC     Gi0/3
+  10    fa16.3e80.922c    DYNAMIC     Gi0/2
+  10    fa16.3e9e.0d6e    DYNAMIC     Gi0/3
+  10    fa16.3ebc.c938    DYNAMIC     Gi0/3
+  20    fa16.3e9e.0d6e    DYNAMIC     Gi0/3
+  20    fa16.3eb4.3a60    DYNAMIC     Gi0/3
+  21    fa16.3e9e.0d6e    DYNAMIC     Gi0/3
+  21    fa16.3eb4.3a60    DYNAMIC     Gi0/3
+  22    fa16.3e67.e653    DYNAMIC     Gi0/3
+  22    fa16.3e9e.0d6e    DYNAMIC     Gi0/3
+  22    fa16.3eb4.3a60    DYNAMIC     Gi0/3
+  23    fa16.3e9e.0d6e    DYNAMIC     Gi0/3
+  23    fa16.3eb4.3a60    DYNAMIC     Gi0/3
+  24    fa16.3e9e.0d6e    DYNAMIC     Gi0/3
+  24    fa16.3eb4.3a60    DYNAMIC     Gi0/3
+  25    fa16.3e9e.0d6e    DYNAMIC     Gi0/3
+  25    fa16.3eb4.3a60    DYNAMIC     Gi0/3
+  26    fa16.3e9e.0d6e    DYNAMIC     Gi0/3
+  26    fa16.3eb4.3a60    DYNAMIC     Gi0/3
+Total Mac Addresses for this criterion: 25

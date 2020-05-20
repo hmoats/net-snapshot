@@ -1,0 +1,29 @@
+Extended IP access list CISCO-CWA-URL-REDIRECT-ACL
+    100 deny udp any any eq domain
+    101 deny tcp any any eq domain
+    102 deny udp any eq bootps any
+    103 deny udp any any eq bootpc
+    104 deny udp any eq bootpc any
+    105 permit tcp any any eq www
+Extended IP access list mgmt-in
+    10 permit tcp 172.16.1.0 0.0.0.255 any eq 22
+    20 deny ip any any log
+    30 permit tcp 192.168.1.0 0.0.0.255 any
+Extended IP access list preauth_ipv4_acl (per-user)
+    10 permit udp any any eq domain
+    20 permit tcp any any eq domain
+    30 permit udp any eq bootps any
+    40 permit udp any any eq bootpc
+    50 permit udp any eq bootpc any
+    60 deny ip any any
+IPv6 access list preauth_ipv6_acl (per-user)
+    permit udp any any eq domain sequence 10
+    permit tcp any any eq domain sequence 20
+    permit icmp any any nd-ns sequence 30
+    permit icmp any any nd-na sequence 40
+    permit icmp any any router-solicitation sequence 50
+    permit icmp any any router-advertisement sequence 60
+    permit icmp any any redirect sequence 70
+    permit udp any eq 547 any eq 546 sequence 80
+    permit udp any eq 546 any eq 547 sequence 90
+    deny ipv6 any any sequence 100
